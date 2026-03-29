@@ -1,0 +1,178 @@
+[
+  {
+    "name": "strefatech",
+    "displayName": "StrefaTECH",
+    "description": "Nonprofit technology community platform — main public site",
+    "liveUrl": "https://strefatech.org",
+    "status": "active",
+    "editor": "Claude Code",
+    "deployedVia": "vercel",
+    "database": null,
+    "githubUrl": "https://github.com/DebStuligross/strefatech"
+  },
+  {
+    "name": "strefatech-topics-app",
+    "displayName": "StrefaTECH Topics",
+    "description": "Article tracker and planner for StrefaTECH content",
+    "liveUrl": "https://strefatech-topics-app.vercel.app",
+    "status": "active",
+    "editor": "Claude Code",
+    "deployedVia": "vercel",
+    "database": null,
+    "githubUrl": "https://github.com/DebStuligross/strefatech-topics-app-"
+  },
+  {
+    "name": "joes-lesson-lifeline",
+    "displayName": "Joe's Lesson Lifeline",
+    "description": "Lesson capture and audio storage app for Joe",
+    "liveUrl": "https://joes-lesson-lifeline.netlify.app",
+    "status": "active",
+    "editor": "Claude Code",
+    "deployedVia": "netlify",
+    "database": "Supabase",
+    "githubUrl": null
+  },
+  {
+    "name": "ntc26-aup-app",
+    "displayName": "NTC26 AI Pledge",
+    "description": "NTC 2026 AI Sustainability Pledge app for conference attendees",
+    "liveUrl": "https://ntc26-aup-app.vercel.app",
+    "status": "active",
+    "editor": "Claude Code",
+    "deployedVia": "vercel",
+    "database": "Supabase",
+    "githubUrl": null
+  },
+  {
+    "name": "rosie-tasks",
+    "displayName": "Deb's Task Master",
+    "description": "Personal task manager backed by Google Sheets",
+    "liveUrl": "https://deb-task-master.netlify.app",
+    "status": "active",
+    "editor": "VSCode",
+    "deployedVia": "netlify",
+    "database": "Google Sheets",
+    "githubUrl": "https://github.com/DebStuligross/rosie-tasks"
+  },
+  {
+    "name": "project-brief-wizard",
+    "displayName": "Project Brief Wizard",
+    "description": "Interactive AI literacy project brief wizard for nonprofits",
+    "liveUrl": "https://ai-literacy-project-brief-wizard.netlify.app",
+    "status": "active",
+    "editor": "Claude Code",
+    "deployedVia": "netlify",
+    "database": null,
+    "githubUrl": null
+  },
+  {
+    "name": "deb-website",
+    "displayName": "debstuligross.com",
+    "description": "Deb's personal website",
+    "liveUrl": "https://debstuligross.com",
+    "status": "active",
+    "editor": "Claude Code",
+    "deployedVia": "github-pages",
+    "database": null,
+    "githubUrl": "https://github.com/DebStuligross/deb-website"
+  },
+  {
+    "name": "voicegivers-web",
+    "displayName": "VoiceGivers",
+    "description": "VoiceGivers organization website",
+    "liveUrl": "https://voicegivers.org",
+    "status": "active",
+    "editor": "Claude Code",
+    "deployedVia": "github-pages",
+    "database": null,
+    "githubUrl": null
+  },
+  {
+    "name": "rrp-finance-committee",
+    "displayName": "RRP Finance Committee",
+    "description": "RRP finance committee reporting pages for board meetings",
+    "liveUrl": "https://rrp-finance-committee.netlify.app",
+    "status": "active",
+    "editor": "Claude Code",
+    "deployedVia": "netlify",
+    "database": null,
+    "githubUrl": null
+  },
+  {
+    "name": "morning-briefing",
+    "displayName": "Morning Briefing",
+    "description": "Google Apps Script that generates a daily morning email briefing",
+    "liveUrl": null,
+    "status": "setup-pending",
+    "editor": "Claude Code",
+    "deployedVia": "google-apps-script",
+    "database": null,
+    "githubUrl": null
+  },
+  {
+    "name": "slack-claude-bot",
+    "displayName": "Rosie Slack Bot",
+    "description": "Slack bot that runs as a local PM2 service on the Lenovo",
+    "liveUrl": null,
+    "status": "setup-pending",
+    "editor": "Claude Code",
+    "deployedVia": "local",
+    "database": null,
+    "githubUrl": null
+  },
+  {
+    "name": "rrp-dashboard",
+    "displayName": "RRP Dashboard",
+    "description": "Reading Ready Pittsburgh board analytics dashboard",
+    "liveUrl": null,
+    "status": "in-progress",
+    "editor": "Claude Code",
+    "deployedVia": "local",
+    "database": null,
+    "githubUrl": null
+  },
+  {
+    "name": "RecipeBox",
+    "displayName": "RecipeBox",
+    "description": "Personal recipe management app",
+    "liveUrl": null,
+    "status": "in-progress",
+    "editor": "Claude Code",
+    "deployedVia": "local",
+    "database": "Supabase",
+    "githubUrl": "https://github.com/DebStuligross/RecipeBox"
+  },
+  {
+    "name": "Fellowship",
+    "displayName": "Fellowship",
+    "description": "Church directory and community connection app (co-project with Sam)",
+    "liveUrl": null,
+    "status": "planning",
+    "editor": "Claude Code",
+    "deployedVia": "local",
+    "database": null,
+    "githubUrl": null
+  },
+  {
+    "name": "tttr-bdd-13-wheel",
+    "displayName": "BDD 13-Wheel",
+    "description": "TTTR training spinning wheel for BDD exercise (13 segments)",
+    "liveUrl": null,
+    "status": "completed",
+    "editor": "Claude Code",
+    "deployedVia": "local",
+    "database": null,
+    "githubUrl": null
+  },
+  {
+    "name": "wheel-of-moderators",
+    "displayName": "Wheel of Moderators",
+    "description": "TTTR facilitator spinning wheel for selecting moderators",
+    "liveUrl": null,
+    "status": "completed",
+    "editor": "Claude Code",
+    "deployedVia": "local",
+    "database": null,
+    "githubUrl": null
+  }
+]

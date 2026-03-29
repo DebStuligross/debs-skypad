@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Deb's Skypad — Design Spec</title>
+<style>
+  :root {
+    --periwinkle: #7B8CDE;
+    --periwinkle-dark: #5A6BC7;
+    --periwinkle-bg: #F7F8FE;
+    --text: #1a1a2e;
+    --text-muted: #6b7280;
+    --border: #d1d5db;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: var(--periwinkle-bg);
+    color: var(--text);
+    line-height: 1.7;
+  }
+  header {
+    background: linear-gradient(135deg, var(--periwinkle), var(--periwinkle-dark));
+    color: white;
+    padding: 20px 32px;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: -0.3px;
+  }
+  header span { font-weight: 300; opacity: 0.8; font-size: 14px; margin-left: 10px; }
+  main {
+    max-width: 820px;
+    margin: 40px auto;
+    padding: 0 24px 80px;
+  }
+  .card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    padding: 36px 40px;
+  }
+  h1 { font-size: 24px; font-weight: 700; margin-bottom: 4px; color: var(--text); }
+  .meta { font-size: 13px; color: var(--text-muted); margin-bottom: 32px; }
+  h2 {
+    font-size: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--periwinkle-dark);
+    margin: 32px 0 12px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid #E8EBFA;
+  }
+  h3 { font-size: 15px; font-weight: 600; margin: 20px 0 8px; }
+  p { margin-bottom: 12px; font-size: 15px; }
+  ul, ol { padding-left: 20px; margin-bottom: 12px; }
+  li { font-size: 15px; margin-bottom: 4px; }
+  code {
+    font-family: 'SF Mono', 'Cascadia Code', Consolas, monospace;
+    background: #F3F5FD;
+    color: #5A6BC7;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 13px;
+  }
+  pre {
+    background: #1a1a2e;
+    color: #e8ebfa;
+    padding: 16px 20px;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-size: 13px;
+    line-height: 1.6;
+    margin: 12px 0;
+  }
+  pre code { background: none; color: inherit; padding: 0; }
+  table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 14px; }
+  th { background: #F3F5FD; font-weight: 600; text-align: left; padding: 8px 12px; border: 1px solid var(--border); color: var(--periwinkle-dark); }
+  td { padding: 8px 12px; border: 1px solid var(--border); }
+  tr:nth-child(even) td { background: #FAFBFF; }
+  .badge {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 99px;
+    font-size: 12px;
+    font-weight: 600;
+    background: #E8EBFA;
+    color: #7B8CDE;
+  }
+  hr { border: none; border-top: 1px solid var(--border); margin: 28px 0; }
+</style>
+</head>
+<body>
+<header>Deb's Skypad <span>Design Spec · 2026-03-27</span></header>
+<main>
+<div class="card">
+
+<h1>Deb's Skypad</h1>
+<p class="meta">Status: <span class="badge">Approved</span> &nbsp;·&nbsp; Stack: Vite + React + Tailwind &nbsp;·&nbsp; Deploy: Vercel</p>
+
+<h2>Overview</h2>
+<p>A personal project launcher — a deployed web app Deb bookmarks and opens daily to quickly access and launch any of her Claude Code projects and apps. Read-only: data is maintained by Rosie (updating a JSON file), not through the UI.</p>
+<p>Named as a nod to the Jetsons' "Skypad Apartments."</p>
+
+<h2>Goals</h2>
+<ol>
+  <li><strong>Launch fast</strong> — one click from bookmark to live app</li>
+  <li><strong>See status at a glance</strong> — what's active, in progress, local-only, etc.</li>
+  <li><strong>Know the setup</strong> — editor, deployment platform, database, without having to look it up</li>
+</ol>
+
+<h2>Non-Goals (v1)</h2>
+<ul>
+  <li>No editing or CRUD in the UI</li>
+  <li>No skills or utilities tracking (future phase)</li>
+  <li>No authentication</li>
+  <li>No server-side logic</li>
+</ul>
+
+<h2>Architecture</h2>
+<ul>
+  <li><strong>Stack:</strong> Vite + React + Tailwind CSS</li>
+  <li><strong>Data:</strong> <code>src/projects.json</code> — static JSON imported at build time. No API calls, no database.</li>
+  <li><strong>Deployment:</strong> Vercel, auto-deploys on push to <code>main</code></li>
+  <li><strong>Dev:</strong> <code>npm run dev</code> → <code>http://localhost:5173</code></li>
+</ul>
+
+<h2>Data Schema</h2>
+<p>Each entry in <code>src/projects.json</code>:</p>
+<pre><code>{
+  "name": "rosie-tasks",
+  "displayName": "Deb's Task Master",
+  "description": "Personal task manager backed by Google Sheets",
+  "liveUrl": "https://deb-task-master.netlify.app",
+  "status": "active",
+  "editor": "vscode",
+  "deployedVia": "netlify",
+  "database": "Google Sheets",
+  "localPath": "C:\\Users\\dasad\\Projects\\rosie-tasks",
+  "githubUrl": "https://github.com/DebStuligross/rosie-tasks"
+}</code></pre>
+<p><strong>Status values:</strong> <code>active</code> · <code>in-progress</code> · <code>planning</code> · <code>setup-pending</code> · <code>completed</code> · <code>local-only</code></p>
+<p><strong>Nullable fields:</strong> <code>liveUrl</code>, <code>githubUrl</code>, <code>database</code> (null if not applicable)</p>
+
+<h2>UI</h2>
+
+<h3>Header</h3>
+<ul>
+  <li>Periwinkle gradient (<code>#7B8CDE → #5A6BC7</code>), same as rosie-tasks</li>
+  <li>Deb's photo avatar (left) — <code>public/deb-photo.png</code>, 40px circle with white border</li>
+  <li>App title "Deb's Skypad" + light-weight subtitle "All your projects, one place"</li>
+</ul>
+
+<h3>Filter Bar</h3>
+<ul>
+  <li>Toggle pills, white background, periwinkle border when active</li>
+  <li><strong>Status:</strong> All · Active · In Progress · Planning · Setup Pending · Completed</li>
+  <li><strong>Platform:</strong> All · Vercel · Netlify · GitHub Pages · Local — derived from <code>deployedVia</code> field</li>
+  <li><strong>Filter combination:</strong> AND — project must match both filters to appear</li>
+  <li>Clicking the active pill resets it to "All"</li>
+</ul>
+
+<h3>Card Grid</h3>
+<p>Responsive: 3 columns desktop → 2 tablet → 1 mobile. Background: <code>#F7F8FE</code>. Cards: white, 8px radius, <code>box-shadow: 0 1px 3px rgba(0,0,0,0.08)</code>.</p>
+
+<h3>Card Anatomy</h3>
+<pre><code>┌────────────────────────────────────┐
+│ Project Name            [● Active] │  ← name is a link if liveUrl exists
+│ One-line description               │
+│                                    │
+│ [Claude Code] [Vercel] [Supabase]  │  ← metadata chips
+└────────────────────────────────────┘</code></pre>
+<ul>
+  <li><strong>Name:</strong> <code>#1a1a2e</code>, 16px semibold. Clickable link (new tab) if <code>liveUrl</code> set; plain text otherwise.</li>
+  <li><strong>Description:</strong> <code>#6b7280</code>, 13px</li>
+  <li><strong>Metadata chips:</strong> Small pills, <code>#F3F5FD</code> bg, <code>#6b7280</code> text. Editor · Deployed via · Database (omit if null)</li>
+</ul>
+
+<h3>Status Badge Colors</h3>
+<table>
+  <tr><th>Status</th><th>Text</th><th>Background</th></tr>
+  <tr><td><code>active</code></td><td>#7B8CDE</td><td>#E8EBFA</td></tr>
+  <tr><td><code>in-progress</code></td><td>#E8850C</td><td>#FEF3E2</td></tr>
+  <tr><td><code>planning</code></td><td>#1565C0</td><td>#E3F0FF</td></tr>
+  <tr><td><code>setup-pending</code></td><td>#E91E8C</td><td>#FCE4F2</td></tr>
+  <tr><td><code>completed</code></td><td>#8B95A5</td><td>#F0F1F4</td></tr>
+  <tr><td><code>local-only</code></td><td>#8B95A5</td><td>#F0F1F4</td></tr>
+</table>
+
+<h2>File Structure</h2>
+<pre><code>debs-skypad/
+├── src/
+│   ├── projects.json        ← data source (maintained by Rosie)
+│   ├── App.tsx              ← root component, filter state
+│   ├── components/
+│   │   ├── Header.tsx
+│   │   ├── FilterBar.tsx
+│   │   └── ProjectCard.tsx
+│   ├── main.tsx
+│   └── style.css
+├── public/
+│   └── deb-photo.png
+├── docs/specs/
+│   └── 2026-03-27-skypad-design.md
+├── index.html
+├── package.json
+├── vite.config.ts
+└── tsconfig.json</code></pre>
+
+<h2>Visual Design Tokens</h2>
+<pre><code>--periwinkle:      #7B8CDE
+--periwinkle-dark: #5A6BC7
+--periwinkle-light:#E8EBFA
+--periwinkle-bg:   #F7F8FE
+--text:            #1a1a2e
+--text-muted:      #6b7280
+--border:          #d1d5db
+--shadow:          0 1px 3px rgba(0,0,0,0.08)
+
+Font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif</code></pre>
+
+<h2>Maintenance Protocol</h2>
+<ol>
+  <li>Rosie updates <code>~/.claude/MEMORY/project-registry.md</code> — human-readable source of truth in Rosie's memory system</li>
+  <li>Rosie updates <code>src/projects.json</code> in this repo — the app's data source</li>
+  <li><code>git push origin main</code> → Vercel auto-deploys</li>
+</ol>
+
+<h2>Out of Scope (Future Phases)</h2>
+<ul>
+  <li>Skills and utilities tracking</li>
+  <li>Editable UI</li>
+  <li>Search</li>
+  <li>Authentication</li>
+</ul>
+
+</div>
+</main>
+</body>
+</html>
