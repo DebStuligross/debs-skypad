@@ -1,5 +1,16 @@
 [
   {
+    "name": "debs-skypad",
+    "displayName": "Deb's Skypad",
+    "description": "Personal project launcher — bookmarkable home base for all Claude Code projects",
+    "liveUrl": "https://debs-skypad.vercel.app",
+    "status": "active",
+    "editor": "Claude Code",
+    "deployedVia": "vercel",
+    "database": null,
+    "githubUrl": "https://github.com/DebStuligross/debs-skypad"
+  },
+  {
     "name": "strefatech",
     "displayName": "StrefaTECH",
     "description": "Nonprofit technology community platform — main public site",
