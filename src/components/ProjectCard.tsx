@@ -49,10 +49,10 @@ export default function ProjectCard({ project }: { project: Project }) {
       background: 'white',
       borderRadius: 8,
       boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
-      padding: '16px',
+      padding: '12px',
       display: 'flex',
       flexDirection: 'column',
-      gap: 8,
+      gap: 6,
       transition: 'box-shadow 0.15s',
       cursor: 'default',
     }}
@@ -67,7 +67,7 @@ export default function ProjectCard({ project }: { project: Project }) {
             target="_blank"
             rel="noopener noreferrer"
             style={{
-              fontSize: 16,
+              fontSize: 14,
               fontWeight: 600,
               color: '#7B8CDE',
               textDecoration: 'none',

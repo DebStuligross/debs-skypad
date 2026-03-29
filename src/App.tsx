@@ -33,12 +33,12 @@ export default function App() {
         onStatusChange={setStatusFilter}
         onPlatformChange={setPlatformFilter}
       />
-      <main style={{ maxWidth: 1200, margin: '0 auto', padding: '24px' }}>
+      <main style={{ maxWidth: 1600, margin: '0 auto', padding: '16px 20px' }}>
         {filtered.length > 0 ? (
           <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))',
-            gap: 16,
+            gridTemplateColumns: 'repeat(auto-fill, minmax(240px, 1fr))',
+            gap: 12,
           }}>
             {filtered.map(p => (
               <ProjectCard key={p.name} project={p} />
