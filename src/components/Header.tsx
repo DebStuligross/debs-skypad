@@ -22,7 +22,7 @@ export default function Header() {
           }}
         />
         <h1 style={{ fontSize: 22, fontWeight: 600, margin: 0 }}>
-          Deb's Skypad
+          🛸 Deb's Skypad
           <span style={{ fontWeight: 300, opacity: 0.85, fontSize: 14, marginLeft: 8 }}>
             All your projects, one place
           </span>
