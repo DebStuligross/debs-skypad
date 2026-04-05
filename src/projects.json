@@ -36,12 +36,12 @@
     "name": "joes-lesson-lifeline",
     "displayName": "Joe's Lesson Lifeline",
     "description": "Lesson capture and audio storage app for Joe",
-    "liveUrl": "https://joes-lesson-lifeline.netlify.app",
+    "liveUrl": "https://joes-lesson-lifeline.vercel.app",
     "status": "active",
     "editor": "Claude Code",
-    "deployedVia": "netlify",
+    "deployedVia": "vercel",
     "database": "Supabase",
-    "githubUrl": null
+    "githubUrl": "https://github.com/DebStuligross/joes-lesson-lifeline"
   },
   {
     "name": "ntc26-aup-app",
@@ -58,10 +58,10 @@
     "name": "rosie-tasks",
     "displayName": "Deb's Task Master",
     "description": "Personal task manager backed by Google Sheets",
-    "liveUrl": "https://deb-task-master.netlify.app",
+    "liveUrl": "https://rosie-tasks.vercel.app",
     "status": "active",
-    "editor": "VSCode",
-    "deployedVia": "netlify",
+    "editor": "Claude Code",
+    "deployedVia": "vercel",
     "database": "Google Sheets",
     "githubUrl": "https://github.com/DebStuligross/rosie-tasks"
   },
@@ -102,12 +102,12 @@
     "name": "rrp-finance-committee",
     "displayName": "RRP Finance Committee",
     "description": "RRP finance committee reporting pages for board meetings",
-    "liveUrl": "https://rrp-finance-committee.netlify.app",
+    "liveUrl": "https://rrp-finance-committee.vercel.app",
     "status": "active",
     "editor": "Claude Code",
-    "deployedVia": "netlify",
+    "deployedVia": "vercel",
     "database": null,
-    "githubUrl": null
+    "githubUrl": "https://github.com/DebStuligross/rrp-finance-committee"
   },
   {
     "name": "morning-briefing",
