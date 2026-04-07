@@ -13,7 +13,7 @@
   {
     "name": "vibe-code-coaster",
     "displayName": "Vibe Code Coaster",
-    "description": "Interactive coaster design app built with vibe coding",
+    "description": "Hype Cycle visualization with animated SVG — tombstones, graveyard, and phase labels",
     "liveUrl": "https://vibe-code-coaster.vercel.app",
     "status": "active",
     "editor": "Claude Code",
