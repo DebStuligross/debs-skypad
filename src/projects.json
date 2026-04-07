@@ -11,6 +11,17 @@
     "githubUrl": "https://github.com/DebStuligross/debs-skypad"
   },
   {
+    "name": "vibe-code-coaster",
+    "displayName": "Vibe Code Coaster",
+    "description": "Interactive coaster design app built with vibe coding",
+    "liveUrl": "https://vibe-code-coaster.vercel.app",
+    "status": "active",
+    "editor": "Claude Code",
+    "deployedVia": "vercel",
+    "database": null,
+    "githubUrl": null
+  },
+  {
     "name": "strefatech",
     "displayName": "strefatech.org",
     "description": "Nonprofit technology community platform — main public site",
