@@ -3,7 +3,7 @@ export interface Project {
   displayName: string
   description: string
   liveUrl: string | null
-  status: 'active' | 'in-progress' | 'planning' | 'setup-pending' | 'completed' | 'local-only'
+  status: 'active' | 'in-progress' | 'planning' | 'setup-pending' | 'local-only' | 'archived'
   editor: string
   deployedVia: string
   database: string | null

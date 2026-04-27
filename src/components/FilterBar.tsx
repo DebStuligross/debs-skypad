@@ -13,7 +13,8 @@ const STATUS_OPTIONS = [
   { value: 'in-progress', label: 'In Progress' },
   { value: 'planning', label: 'Planning' },
   { value: 'setup-pending', label: 'Setup Pending' },
-  { value: 'completed', label: 'Completed' },
+  { value: 'local-only', label: 'Local Only' },
+  { value: 'archived', label: 'Archived' },
 ]
 
 const PLATFORM_OPTIONS = [

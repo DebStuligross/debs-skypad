@@ -5,8 +5,8 @@ const STATUS_COLORS: Record<Project['status'], { color: string; bg: string }> = 
   'in-progress':   { color: '#E8850C', bg: '#FEF3E2' },
   'planning':      { color: '#1565C0', bg: '#E3F0FF' },
   'setup-pending': { color: '#E91E8C', bg: '#FCE4F2' },
-  'completed':     { color: '#8B95A5', bg: '#F0F1F4' },
   'local-only':    { color: '#8B95A5', bg: '#F0F1F4' },
+  'archived':      { color: '#8B95A5', bg: '#F0F1F4' },
 }
 
 const STATUS_LABELS: Record<Project['status'], string> = {
@@ -14,8 +14,8 @@ const STATUS_LABELS: Record<Project['status'], string> = {
   'in-progress':   'In Progress',
   'planning':      'Planning',
   'setup-pending': 'Setup Pending',
-  'completed':     'Completed',
   'local-only':    'Local Only',
+  'archived':      'Archived',
 }
 
 const PLATFORM_LABELS: Record<string, string> = {
