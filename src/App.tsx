@@ -17,11 +17,13 @@ function normalizePlatform(deployedVia: string): string {
 export default function App() {
   const [statusFilter, setStatusFilter] = useState('all')
   const [platformFilter, setPlatformFilter] = useState('all')
+  const [editorFilter, setEditorFilter] = useState('all')
 
   const filtered = projects.filter(p => {
     const statusMatch = statusFilter === 'all' || p.status === statusFilter
     const platformMatch = platformFilter === 'all' || normalizePlatform(p.deployedVia) === platformFilter
-    return statusMatch && platformMatch
+    const editorMatch = editorFilter === 'all' || p.editor === editorFilter
+    return statusMatch && platformMatch && editorMatch
   })
 
   return (
@@ -30,8 +32,10 @@ export default function App() {
       <FilterBar
         statusFilter={statusFilter}
         platformFilter={platformFilter}
+        editorFilter={editorFilter}
         onStatusChange={setStatusFilter}
         onPlatformChange={setPlatformFilter}
+        onEditorChange={setEditorFilter}
       />
       <main style={{ maxWidth: 1600, margin: '0 auto', padding: '16px 20px' }}>
         {filtered.length > 0 ? (

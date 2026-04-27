@@ -1,8 +1,10 @@
 interface FilterBarProps {
   statusFilter: string
   platformFilter: string
+  editorFilter: string
   onStatusChange: (val: string) => void
   onPlatformChange: (val: string) => void
+  onEditorChange: (val: string) => void
 }
 
 const STATUS_OPTIONS = [
@@ -20,6 +22,12 @@ const PLATFORM_OPTIONS = [
   { value: 'netlify', label: 'Netlify' },
   { value: 'github-pages', label: 'GitHub Pages' },
   { value: 'local', label: 'Local' },
+]
+
+const EDITOR_OPTIONS = [
+  { value: 'all', label: 'All' },
+  { value: 'Claude Code', label: 'Claude Code' },
+  { value: 'Codex', label: 'Codex' },
 ]
 
 function Pill({
@@ -54,38 +62,51 @@ function Pill({
   )
 }
 
-export default function FilterBar({ statusFilter, platformFilter, onStatusChange, onPlatformChange }: FilterBarProps) {
+function FilterGroup({
+  label,
+  options,
+  value,
+  onChange,
+}: {
+  label: string
+  options: { value: string; label: string }[]
+  value: string
+  onChange: (val: string) => void
+}) {
+  return (
+    <div style={{ display: 'flex', alignItems: 'center', gap: 6, flexWrap: 'wrap' }}>
+      <span style={{ fontSize: 11, fontWeight: 600, color: '#9ca3af', textTransform: 'uppercase', letterSpacing: '0.05em', whiteSpace: 'nowrap' }}>
+        {label}
+      </span>
+      {options.map(opt => (
+        <Pill
+          key={opt.value}
+          label={opt.label}
+          active={value === opt.value}
+          onClick={() => onChange(value === opt.value && opt.value !== 'all' ? 'all' : opt.value)}
+        />
+      ))}
+    </div>
+  )
+}
+
+export default function FilterBar({ statusFilter, platformFilter, editorFilter, onStatusChange, onPlatformChange, onEditorChange }: FilterBarProps) {
   return (
     <div style={{
       background: 'white',
       padding: '8px 24px 10px',
       display: 'flex',
-      flexDirection: 'column',
-      gap: 8,
+      alignItems: 'center',
+      gap: 0,
+      flexWrap: 'wrap',
       borderBottom: '1px solid #d1d5db',
+      rowGap: 8,
     }}>
-      <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap' }}>
-        <span style={{ fontSize: 11, fontWeight: 600, color: '#9ca3af', textTransform: 'uppercase', letterSpacing: '0.05em', minWidth: 56 }}>Status</span>
-        {STATUS_OPTIONS.map(opt => (
-          <Pill
-            key={opt.value}
-            label={opt.label}
-            active={statusFilter === opt.value}
-            onClick={() => onStatusChange(statusFilter === opt.value && opt.value !== 'all' ? 'all' : opt.value)}
-          />
-        ))}
-      </div>
-      <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap' }}>
-        <span style={{ fontSize: 11, fontWeight: 600, color: '#9ca3af', textTransform: 'uppercase', letterSpacing: '0.05em', minWidth: 56 }}>Platform</span>
-        {PLATFORM_OPTIONS.map(opt => (
-          <Pill
-            key={opt.value}
-            label={opt.label}
-            active={platformFilter === opt.value}
-            onClick={() => onPlatformChange(platformFilter === opt.value && opt.value !== 'all' ? 'all' : opt.value)}
-          />
-        ))}
-      </div>
+      <FilterGroup label="Status" options={STATUS_OPTIONS} value={statusFilter} onChange={onStatusChange} />
+      <div style={{ width: 1, height: 20, background: '#e5e7eb', margin: '0 12px', flexShrink: 0 }} />
+      <FilterGroup label="Platform" options={PLATFORM_OPTIONS} value={platformFilter} onChange={onPlatformChange} />
+      <div style={{ width: 1, height: 20, background: '#e5e7eb', margin: '0 12px', flexShrink: 0 }} />
+      <FilterGroup label="Dev Tool" options={EDITOR_OPTIONS} value={editorFilter} onChange={onEditorChange} />
     </div>
   )
 }
