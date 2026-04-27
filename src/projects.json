@@ -121,6 +121,28 @@
     "githubUrl": "https://github.com/DebStuligross/rrp-finance-committee"
   },
   {
+    "name": "codex-photo-frame",
+    "displayName": "Photo Frame",
+    "description": "Nixplay-style photo slideshow display app running in a local browser window",
+    "liveUrl": "http://localhost:3741",
+    "status": "local-only",
+    "editor": "Codex",
+    "deployedVia": "local",
+    "database": null,
+    "githubUrl": "https://github.com/DebStuligross/codex-photo-frame"
+  },
+  {
+    "name": "codex-photo-captioner",
+    "displayName": "Photo Captioner",
+    "description": "Utility app for writing and managing captions for Photo Frame (companion app, same repo)",
+    "liveUrl": "http://localhost:3742",
+    "status": "local-only",
+    "editor": "Codex",
+    "deployedVia": "local",
+    "database": null,
+    "githubUrl": null
+  },
+  {
     "name": "morning-briefing",
     "displayName": "Morning Briefing",
     "description": "Google Apps Script that generates a daily morning email briefing",
